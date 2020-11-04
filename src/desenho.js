@@ -8,10 +8,10 @@ var corpo = d3.select(dom.window.document.querySelector("body")) //sera criada a
 let svg = corpo.append('svg').attr('width', 10000).attr('height', 10000).attr('xmlns', 'http://www.w3.org/2000/svg');
 
 
-const x1Inicio = 0;
-const y1Inicio = 0;
-const x2Inicio = 0;
-const y2Inicio = 0;
+let x1Inicio = 0;
+let y1Inicio = 0;
+let x2Inicio = 0;
+let y2Inicio = 0;
 
 var listaPontos = [];
 function Line(x1, y1, x2, y2) {
@@ -89,7 +89,7 @@ function utilizaSVG(regraProducao) {
     let ang = regraProducao.split('|')[1];
     for (let char of regraProducao) {
         const caracterAtual = char;
-        const angEscolhido = ang;
+        const angEscolhido = parseFloat(ang);
 
         desenha(caracterAtual,angEscolhido);
 

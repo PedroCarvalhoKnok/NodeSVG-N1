@@ -7,10 +7,22 @@ let arquivo = fs.readFileSync('./entrada.txt').toString();
 let resultado = [];
 
 for (let i = 0; i < arquivo.length; i++) {
-    const charAtual = arquivo[i];
-    const char = regras.get(charAtual);
-
-    resultado.push(char);
+    let char = arquivo[i];
+    let aux = '';
+    if(char == 'F'){
+      aux = 'FF+F+f+F-fBF-f-Ff+B-F'
+      resultado.push(aux);
+    }
+    else if(char == 'f')
+      char = 'F'
+    else if(char == 'B')
+      char = 'B'
+    else if(char == '+')
+      char = '+'
+    else if(char == '-')
+      char = '-'
+  
+  resultado.push(char);
 }
 
 let resultadoTxt = resultado.join(''); //junta lista em uma string
